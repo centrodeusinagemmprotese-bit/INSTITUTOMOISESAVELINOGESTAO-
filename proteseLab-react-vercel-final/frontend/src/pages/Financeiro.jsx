@@ -1,0 +1,1 @@
+import React from "react"; export function Financeiro(){ return <div>Financeiro Page</div>; }
