@@ -17,6 +17,13 @@ router.post("/", async (req, res) => {
     console.error(err);
     res.status(500).json({ error: "Erro ao criar cliente" });
   }
+  CREATE TABLE clientes (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    telefone VARCHAR(20),
+    email VARCHAR(100)
+);
+
 });
 
 // 🔹 Listar clientes
