@@ -1,3 +1,3 @@
 import React from 'react';
-function Servicos() { return <div>Serviços</div>; }
-export default Servicos;
+function Clientes() { return <div>Clientes</div>; }
+export default Clientes;
