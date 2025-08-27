@@ -1,0 +1,1 @@
+import React from "react"; import Navbar from "./components/Navbar.jsx"; import { Clientes } from "./pages/Clientes.jsx"; function App(){ return (<div><Navbar /><Clientes /></div>); } export default App;
