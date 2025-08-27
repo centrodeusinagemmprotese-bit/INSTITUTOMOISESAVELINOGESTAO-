@@ -1,1 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; import Navbar from './components/Navbar'; import Clientes from './pages/Clientes'; import Servicos from './pages/Servicos'; import Financeiro from './pages/Financeiro'; function App() { return (<Router><div className='min-h-screen bg-green-100'><Navbar /><div className='p-4'><Routes><Route path='/' element={<h1 className='text-3xl font-bold text-green-700'>ProteseLab - Gestão de Laboratório de Prótese Odontológica</h1>} /><Route path='/clientes' element={<Clientes />} /><Route path='/servicos' element={<Servicos />} /><Route path='/financeiro' element={<Financeiro />} /></Routes></div></div></Router>); } export default App;
+import Navbar from './components/Navbar'; // relativo
+import Clientes from './pages/Clientes';  // relativo
+import Servicos from './pages/Servicos';
+import Financeiro from './pages/Financeiro';
