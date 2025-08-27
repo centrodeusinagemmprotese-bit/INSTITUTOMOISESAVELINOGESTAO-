@@ -1,19 +1,13 @@
 @echo off
-echo Instalando dependencias...
+echo Rodando backend...
+cd backend
 npm install
-IF %ERRORLEVEL% NEQ 0 (
-    echo Erro ao instalar dependencias.
-    pause
-    exit /b %ERRORLEVEL%
-)
+start cmd /k "npm run dev"
 
-echo Iniciando servidor de desenvolvimento...
-npm run dev
-IF %ERRORLEVEL% NEQ 0 (
-    echo Erro ao iniciar o servidor.
-    pause
-    exit /b %ERRORLEVEL%
-)
+cd ..
+echo Rodando frontend...
+cd frontend
+npm install
+start cmd /k "npm run dev"
 
 pause
-
