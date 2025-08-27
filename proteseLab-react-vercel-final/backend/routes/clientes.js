@@ -4,7 +4,7 @@ import pool from "../db.js";
 
 const router = express.Router();
 
-// 🔹 Criar cliente
+// Criar cliente
 router.post("/", async (req, res) => {
   try {
     const { nome, telefone, email } = req.body;
@@ -17,16 +17,9 @@ router.post("/", async (req, res) => {
     console.error(err);
     res.status(500).json({ error: "Erro ao criar cliente" });
   }
-  CREATE TABLE clientes (
-    id SERIAL PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    telefone VARCHAR(20),
-    email VARCHAR(100)
-);
-
 });
 
-// 🔹 Listar clientes
+// Listar clientes
 router.get("/", async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM clientes ORDER BY id ASC");
@@ -37,7 +30,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// 🔹 Buscar cliente por ID
+// Buscar cliente por ID
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -52,7 +45,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// 🔹 Atualizar cliente
+// Atualizar cliente
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -71,7 +64,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// 🔹 Deletar cliente
+// Deletar cliente
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -88,4 +81,3 @@ router.delete("/:id", async (req, res) => {
 
 export default router;
 
-export default router;
