@@ -4,7 +4,7 @@ import pool from "../db.js";
 
 const router = express.Router();
 
-// 🔹 Registrar lançamento financeiro
+// Registrar lançamento financeiro
 router.post("/", async (req, res) => {
   try {
     const { servico_id, tipo, valor, data } = req.body;
@@ -14,11 +14,12 @@ router.post("/", async (req, res) => {
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: "Erro ao registrar lançamento financeiro" });
   }
 });
 
-// 🔹 Listar lançamentos
+// Listar lançamentos
 router.get("/", async (req, res) => {
   try {
     const result = await pool.query(`
@@ -33,7 +34,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// 🔹 Extrato por período
+// Extrato por período
 router.get("/extrato", async (req, res) => {
   try {
     const { inicio, fim } = req.query;
