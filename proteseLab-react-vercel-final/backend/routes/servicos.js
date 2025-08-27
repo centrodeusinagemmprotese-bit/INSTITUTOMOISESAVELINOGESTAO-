@@ -4,7 +4,7 @@ import pool from "../db.js";
 
 const router = express.Router();
 
-// 🔹 Criar serviço
+// Criar serviço
 router.post("/", async (req, res) => {
   try {
     const { cliente_id, descricao, valor, status } = req.body;
@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// 🔹 Listar serviços
+// Listar serviços
 router.get("/", async (req, res) => {
   try {
     const result = await pool.query(`
@@ -35,7 +35,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// 🔹 Buscar por ID
+// Buscar por ID
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -49,7 +49,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// 🔹 Atualizar serviço
+// Atualizar serviço
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -67,7 +67,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// 🔹 Deletar serviço
+// Deletar serviço
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
