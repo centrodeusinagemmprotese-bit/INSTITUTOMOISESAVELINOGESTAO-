@@ -3,11 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
-  build: {
-    rollupOptions: {
-      // Caso precise externalizar algo
-      external: []
-    }
-  }
+  base: './', // Isso garante que o Vercel encontre os arquivos corretamente
 })
